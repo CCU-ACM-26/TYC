@@ -6,7 +6,7 @@ int main() {
     for (int x=0;x<t;x++) {
         int n;
         cin>>n;
-        unordered_set<int> st;
+        set<int> st;
         while (n--) {
             int s;
             cin>>s;
