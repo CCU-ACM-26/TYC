@@ -1,30 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int main() {
-    int q;
-    cin>>q;
-    stack <int> st;
-    while(q--) {
-        int n;
+stack<int>q;
+int p,n;
+int main()
+{
+    cin>>p;
+    while(p--)
+    {
         cin>>n;
-        for (int i=0; i<n; i++) {
-            int x;
-            cin>>x;
-            st.push(x);
-        }
-        for (int j=0; j<n; j++) {
-            int y;
-            cin>>y;
-            if (st.top()==y) {
-                st.pop();
+        int a[n],b[n],sum=0;
+        for(int i=0;i<n;i++)
+            cin>>a[i];
+        for(int i=0;i<n;i++)
+            cin>>b[i];
+        for(int i=0;i<n;i++)
+        {
+            q.push(a[i]);
+            while((q.top())==b[sum])
+            {
+                q.pop(),sum++;
+                if(q.empty())break;
             }
         }
-        if (st.empty()) {
-            cout<<"YES"<<endl;
-        }
-        else {
-            cout<<"NO\n";
-        }
+        if(q.empty()) cout<<"Yes"<<endl;
+        else cout<<"No"<<endl;
+        while(!q.empty())q.pop();
     }
     return 0;
 }
